@@ -1,0 +1,47 @@
+# Strings of the minima theme
+# language English
+posts: "Innlegg"
+subscribe: "abbonnere"
+via_RSS: "via RSS"
+abbreviated_weekday:
+  - Søn
+  - Man
+  - Tir
+  - Ons
+  - Tor
+  - Fre
+  - Lør
+full_weekday:
+  - Søndag
+  - Mandag
+  - Tirsdag
+  - Onsdag
+  - Torsdag
+  - Fredag
+  - Lørdag
+abbreviated_month:
+  - Jan
+  - Feb
+  - Mar
+  - Apr
+  - Mai
+  - Jun
+  - Jul
+  - Aug
+  - Sep
+  - Okt
+  - Nov
+  - Des
+full_month:
+  - Januar
+  - Februar
+  - Mars
+  - April
+  - Mai
+  - Juni
+  - Juli
+  - August
+  - September
+  - Oktober
+  - November
+  - Desember

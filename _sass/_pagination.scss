@@ -1,0 +1,29 @@
+// Pagination
+//
+// Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+// there are no more previous or next posts to show.
+
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  padding: 1rem 0 0 0;
+  color: grey;
+  text-align: center;
+}
+
+// Pagination items can be `span`s or `a`s
+.pagination-item {
+  display: block;
+  padding: var(--spacer);
+  text-decoration: none;
+  border-bottom: solid 2px #333;
+  padding-bottom: 0.6rem;
+}
+
+// Only provide a hover state for linked pagination items
+a.pagination-item:hover {
+  background-color: var(--border-color);
+}
+
+

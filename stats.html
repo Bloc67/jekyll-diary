@@ -1,0 +1,26 @@
+---
+layout: page
+permalink: /stats/
+title: Statistikk
+---
+<h3>Kategorier</h3>
+<ul id="stats">
+    {% for category in site.categories %}
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+    <li>
+        <small>{{ category_name | size }}</small>
+        <a href="{{site.baseurl}}/categories/#{{ category_name | slugize }}">{{ category_name }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<h3>Tagger</h3>
+<ul id="stats">
+    {% for category in site.tags %}
+        {% capture category_name %}{{ category | first }}{% endcapture %}
+    <li>
+        <small>{{ category_name | size }}</small>
+        <a href="{{site.baseurl}}/tags/#{{ category_name | slugize }}">{{ category_name }}</a>
+    </li>
+    {% endfor %}
+</ul>

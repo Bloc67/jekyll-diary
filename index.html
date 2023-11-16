@@ -1,0 +1,35 @@
+---
+layout: default
+title: Home
+---
+<h2>Siste innlegg</h2>
+<div class="sposts">
+  {% for post in paginator.posts %}
+  <article class="slekt" >
+    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date" style="margin: 0;">
+    
+      {% assign months = "Jan|Feb|Mar|Apr|Mai|Jun|Jul|Aug|Sep|Okt|Nov|Des" | split: "|" %}
+      {% assign m = post.date | date: "%-m" | minus: 1 %}
+      {% assign day = post.date | date: "%d" %}
+      {% assign month = months[m] %}
+      {% assign year = post.date | date: "%Y" %}
+      <span class="date">{{ day }}.{{ month }} {{ year }}</span>
+    </time>
+      <a href="{{ post.url | relative_url }}" style="background-image: url({{ post.thumb }});">
+      </a>
+   </article>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}">Eldre</a>
+  {% else %}
+    <span class="pagination-item older">Eldre</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: relative_url }}">Nyere</a>
+  {% else %}
+    <span class="pagination-item newer">Nyere</span>
+  {% endif %}
+</div>

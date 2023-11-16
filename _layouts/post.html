@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<article class="post">
+  <time class="post-date">
+
+{% assign months = "Januar|Februar|Mars|April|Mai|Juni|Juli|August|September|Oktober|November|Desember" | split: "|" %}
+{% assign m = page.date | date: "%-m" | minus: 1 %}
+{% assign day = page.date | date: "%d" %}
+{% assign month = months[m] %}
+{% assign year = page.date | date: "%Y" %}
+<span class="date">{{ day }} {{ month }} {{ year }}</span>
+
+  </time>
+  <h2>{{ page.title }}</h2>
+  <div class="post-categories" style="opacity: 0.7;">
+    {% if post %}
+      {% assign categories = post.categories %}
+    {% else %}
+      {% assign categories = page.categories %}
+    {% endif %}
+    {% for category in categories %}
+    <a href="{{site.baseurl}}/personer/#{{category|slugize}}">{{category}}</a>
+    {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+    {% if post %}
+      {% assign tags = post.tags %}
+    {% else %}
+      {% assign tags = page.tags %}
+    {% endif %}
+     &nbsp;|&nbsp; 
+    {% for tag in tags %}
+    <a href="{{site.baseurl}}/tagger/#{{tag|slugize}}">{{tag}}</a>
+    {% unless forloop.last %}&nbsp;|&nbsp;{% endunless %}
+    {% endfor %}
+    </div><hr>
+    {{ content }}
+ <a href="{{ page.full }}" target="_blank">
+  <img class="frontbilde" src="{{ page.thumb }}" alt="" />
+</a>
+</article>
+
+
